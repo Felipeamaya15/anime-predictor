@@ -63,11 +63,13 @@ datos_corregidos = [
 
 df = pd.DataFrame(datos_corregidos)
 
-# Guardamos el archivo definitivo
+# Guardamos el dataset manual (base para fusionar con datos de la API)
+archivo_manual = 'dataset_manual.csv'
 archivo_salida = 'dataset_anime_final.csv'
+df.to_csv(archivo_manual, index=False)
 df.to_csv(archivo_salida, index=False)
 
 print(f"✅ ¡Dataset generado con éxito!")
-print(f"📄 Archivo: {archivo_salida}")
+print(f"📄 Archivos: {archivo_manual}, {archivo_salida}")
 print(f"📊 Filas: {len(df)}")
 print(f"🔍 Ejemplo de Estudios: {df['Studio'].unique()[:5]}")
